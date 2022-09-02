@@ -1,0 +1,51 @@
+
+<%- include('includes/start.ejs') %>
+<%- include('includes/head.ejs') %>
+  </head>
+  <body>
+<%- include('includes/navigation-menu.ejs') %>
+    <main role="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <% if((validationErrors?.length ?? 0) > 0) { %>
+            <div class="row">
+              <p>
+                <ul>
+                    <% for(let error of validationErrors) { %>
+                        <li>
+                          <%= error.msg %>
+                        </li>
+                    <% } %>
+                </ul>
+              </p>
+            </div>
+            <% } %>
+            <form action="/accounts/signup" method="post" class="form-signin" novalidate>
+              <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+              <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+              <label for="firstName" class="sr-only">First name</label>
+              <p>
+                <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First name" required autofocus>
+              </p>
+              <label for="lastName" class="sr-only">Last name</label>
+              <p>
+                <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Last name" autofocus>
+              </p>
+              <label for="email" class="sr-only">Email address</label>
+              <p>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+              </p>
+              <label for="password" class="sr-only">Password</label>
+              <p>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+              </p>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+<%- include('includes/footer.ejs') %>
+<%- include('includes/end.ejs') %>
