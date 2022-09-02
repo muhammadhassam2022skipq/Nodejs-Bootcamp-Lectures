@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>
+            <%= pageTitle %>
+        </title>
+        <link href="/style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <ul>
+            <% for (let product of products) { %>
+                <li>
+                    <%= product.name %> - <%= product.price %>
+                </li>
+            <% } %>
+        </ul>
+    </body>
+</html>

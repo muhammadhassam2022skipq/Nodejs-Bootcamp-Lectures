@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>
+            <%= pageTitle %>
+        </title>
+        <link href="/style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <form action="/admin/add-product" method="POST">
+            <p>
+                <input type="text" name="product">
+            </p>
+            <p>
+                <input type="text" name="price">
+            </p>
+            <button>Add</button>
+            
+        </form>
+    </body>
+</html>

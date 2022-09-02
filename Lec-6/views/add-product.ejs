@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('includes/head.ejs') %>
+</head>
+<body>
+    <%- include('includes/navigation-menu.ejs') %>    
+    <div class="container">
+        <form action="/shopping/add-product" method="post">
+            <div class="row">
+                <div class="col-md-5">  
+                        <label>
+                            Category
+                        </label>
+                        <p>
+                            <select class="form-control" name="categoryId">
+                                <option value="">--Select--</option>
+                                <% for(let category of categories) {%>
+                                    <option value="<%= category._id %>"><%= category.title %></option>
+                                <% } %>
+                            </select>
+                        </p>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-5">
+                
+                    <label>
+                        Name
+                    </label>
+                    <p>
+                        <input type="text" class="form-control" name="name">
+                    </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                
+                    <label>
+                        Price
+                    </label>
+                    <p>
+                        <input type="text" class="form-control" name="price">
+                    </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                    <p>
+                        <button class="btn btn-primary">Add</button>
+                    </p>
+            </div>
+        </div>
+    </form>
+    </div>
+<%- include('includes/end.ejs') %>
