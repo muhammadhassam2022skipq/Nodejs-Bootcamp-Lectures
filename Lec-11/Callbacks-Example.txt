@@ -1,0 +1,22 @@
+// Import stylesheets
+import './style.css';
+
+const addCallBack = () => {
+  console.log('Sum is calculated');;
+}
+
+// Write Javascript code!
+const appDiv = document.getElementById('app');
+appDiv.innerHTML = Add(3, 5, async () => {
+  
+});
+
+function Add(x, y, callBack) {
+  const sum = x+y;
+  callBack();
+  return sum;
+}
+
+// function AddCallBack() {
+//   console.log('Sum is calculated');;
+// }
